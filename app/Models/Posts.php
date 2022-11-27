@@ -13,7 +13,7 @@ class Posts extends Model{
 
     // one to many relationship
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comments::class);
     }
 
     // one to many relationship

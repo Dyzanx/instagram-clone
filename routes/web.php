@@ -12,3 +12,4 @@ Route::get('/user/avatar/{filename}', [App\Http\Controllers\UserController::clas
 
 Route::get('/post/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/post/save', [App\Http\Controllers\PostController::class, 'save'])->name('post.save');
+Route::get('/post/file/{filename}', [App\Http\Controllers\HomeController::class, 'getImage'])->name('post.file');

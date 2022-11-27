@@ -30,3 +30,49 @@ form .avatar{
     color: gray;
     font-size: 12px;
 }
+.pub-image .card-body{
+    padding: 0px;
+}
+.pub-image .post{
+    max-height: 500px;
+    overflow: hidden;
+}
+.pub-image .post img{
+    width: 100% !important;
+}
+.pub-image .description{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.pub-image .likes{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    font-size: 25px;
+}
+.pub-image a{
+    text-decoration: none;
+    color: black;
+    transition: 300ms;
+}
+.pub-image .like-button:hover{
+    color: red;
+}
+.pub-image .unlike-button{
+    color: red;
+}
+.pub-image .unlike-button:hover{
+    color: black;
+}
+.pub-image .comments-button:hover{
+    color: gray;
+}
+svg{
+    display: none;
+}
+nav[role=navigation] div:last-child{
+    display: none;
+}
+nav[role=navigation] div:first-child span{
+    margin-right: 10px;
+}
