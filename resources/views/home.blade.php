@@ -36,8 +36,8 @@
                             <i class="fa-solid fa-heart"></i>
                         </a> -->
                         <a href="" title="comments" class="comments-button">
-                            <i class="fa-regular fa-comment-dots"></i>
-                            <!-- ({{count($post->comments)}}) -->
+                            <i class="fa-regular fa-comment-dots"></i>({{count($post->comments)}})
+                            <!--  -->
                         </a>
                     </div>
                     <div class="description">

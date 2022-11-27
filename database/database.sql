@@ -33,7 +33,8 @@ INSERT INTO posts VALUES(NULL, 1, '', 'EXAMPLE INSERT FROM databalse.sql FILE', 
 CREATE TABLE IF NOT EXISTS comments(
     id int not null AUTO_INCREMENT PRIMARY KEY,
     user_id int(255) not null,
-    post_id int(255) not null,
+    posts_id int(255) not null,
+    -- if doesn't haves the "S" throws error
     content TEXT,
     created_at datetime,
     updated_at datetime,
