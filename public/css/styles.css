@@ -38,11 +38,17 @@ form .avatar{
     overflow: hidden;
 }
 .pub-image .post img{
-    width: 100% !important;
+    width: 100%;
 }
 .pub-image .description{
     padding-left: 20px;
     padding-right: 20px;
+}
+.description:last-of-type{
+    padding-bottom: 20px;
+}
+.comments-icon{
+    margin-right: 5px;
 }
 .pub-image .likes{
     padding-left: 20px;
@@ -67,6 +73,12 @@ form .avatar{
 .pub-image .comments-button:hover{
     color: gray;
 }
+.details .post{
+    max-height: fit-content;
+}
+.details .post img{
+    height: 100%;
+}
 svg{
     display: none;
 }
@@ -75,4 +87,26 @@ nav[role=navigation] div:last-child{
 }
 nav[role=navigation] div:first-child span{
     margin-right: 10px;
+}
+.users-comments{
+    margin-top: 20px;
+}
+.users-comments .user-comment{
+    padding-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.users-comments .user-comment:first-child{
+    border-top: 1px solid #ccc;
+}
+.users-comments .user-comment:last-child{
+    border-bottom: none;
+}
+.comments-title{
+    margin-top: 20px;
+}
+.config-comments a{
+    margin-bottom: 15px;
+}
+.config-comments a{
+    color: white;
 }

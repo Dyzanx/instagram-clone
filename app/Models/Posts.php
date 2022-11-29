@@ -13,7 +13,7 @@ class Posts extends Model{
 
     // one to many relationship
     public function comments(){
-        return $this->hasMany(Comments::class);
+        return $this->hasMany(Comments::class)->orderBy('id', 'desc');
     }
 
     // one to many relationship

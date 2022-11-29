@@ -12,7 +12,7 @@ class Comments extends Model{
 
     // Many to one relationships
     public function post(){
-        return $this->belongsTo(Posts::class, 'post_id');
+        return $this->belongsTo(Posts::class, 'posts_id');
     }
 
     public function user(){

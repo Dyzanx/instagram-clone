@@ -40,4 +40,12 @@ class PostController extends Controller{
 
         return redirect()->route('home')->with('message', 'Post created successfully');
     }
+
+    public function detail($id){
+        $post = Posts::find($id);
+
+        return view('post.detail', [
+            'post' => $post
+        ]); 
+    }
 }

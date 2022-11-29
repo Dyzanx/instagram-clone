@@ -24,10 +24,12 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="post">
-                        <img src="{{ route('post.file', ['filename' => $post->image_path]) }}"
-                            alt="{{ $post->user->nickname }} post">
-                    </div>
+                    <a href="{{ route('post.detail', ['id' => $post->id]) }}" title="Go to post">
+                        <div class="post">
+                            <img src="{{ route('post.file', ['filename' => $post->image_path]) }}"
+                                alt="{{ $post->user->nickname }} post">
+                        </div>
+                    </a>
                     <div class="likes">
                         <a href="" title="like" class="like-button">
                             <i class="fa-regular fa-heart"></i>
@@ -37,7 +39,6 @@
                         </a> -->
                         <a href="" title="comments" class="comments-button">
                             <i class="fa-regular fa-comment-dots"></i>({{count($post->comments)}})
-                            <!--  -->
                         </a>
                     </div>
                     <div class="description">

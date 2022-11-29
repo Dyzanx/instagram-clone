@@ -13,3 +13,7 @@ Route::get('/user/avatar/{filename}', [App\Http\Controllers\UserController::clas
 Route::get('/post/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/post/save', [App\Http\Controllers\PostController::class, 'save'])->name('post.save');
 Route::get('/post/file/{filename}', [App\Http\Controllers\HomeController::class, 'getImage'])->name('post.file');
+Route::get('/post/{id}', [App\Http\Controllers\PostController::class, 'detail'])->name('post.detail');
+
+Route::get('/comment/save', [App\Http\Controllers\CommentsController::class, 'save'])->name('comment.save');
+Route::get('/comment/delete/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
