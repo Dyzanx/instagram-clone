@@ -54,21 +54,19 @@ form .avatar{
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
-    font-size: 25px;
+    font-size: 20px;
 }
 .pub-image a{
     text-decoration: none;
     color: black;
     transition: 300ms;
 }
-.pub-image .like-button:hover{
-    color: red;
+.pub-image .like-button{
+    max-width: 19px;
 }
-.pub-image .unlike-button{
+.pub-image .dislike-button{
     color: red;
-}
-.pub-image .unlike-button:hover{
-    color: black;
+    max-width: 23px;
 }
 .pub-image .comments-button:hover{
     color: gray;
@@ -109,4 +107,8 @@ nav[role=navigation] div:first-child span{
 }
 .config-comments a{
     color: white;
+}
+.likes-counter{
+    color: gray;
+    margin-right: 10px;
 }

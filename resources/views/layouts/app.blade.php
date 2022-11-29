@@ -12,6 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -60,6 +62,9 @@
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('like.index') }}">Favorites</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('post.create') }}">New post</a>

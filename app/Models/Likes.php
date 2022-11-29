@@ -11,11 +11,11 @@ class Likes extends Model{
     protected $table = 'likes';
 
     // Many to one relationships
-    public function post(){
-        return $this->belongsTo(Posts::class, 'post_id');
-    }
-
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function post(){
+        return $this->belongsTo(Posts::class, 'posts_id');
     }
 }

@@ -17,3 +17,7 @@ Route::get('/post/{id}', [App\Http\Controllers\PostController::class, 'detail'])
 
 Route::get('/comment/save', [App\Http\Controllers\CommentsController::class, 'save'])->name('comment.save');
 Route::get('/comment/delete/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
+
+Route::get('/like/{post_id}', [App\Http\Controllers\LikesController::class, 'like'])->name('like.like');
+Route::get('/dislike/{post_id}', [App\Http\Controllers\LikesController::class, 'dislike'])->name('like.dislike');
+Route::get('/likes', [App\Http\Controllers\LikesController::class, 'index'])->name('like.index');

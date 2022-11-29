@@ -48,7 +48,8 @@ INSERT INTO comments VALUES(NULL, 1, 1, 'thath car so crazy!', CURTIME(), CURTIM
 CREATE TABLE IF NOT EXISTS likes(
     id int not null AUTO_INCREMENT PRIMARY KEY,
     user_id int(255) not null,
-    post_id int(255) not null,
+    posts_id int(255) not null,
+    -- if doesn't haves the "S" throws error
     created_at datetime,
     updated_at datetime,
 

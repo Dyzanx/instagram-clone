@@ -18,7 +18,7 @@ class Posts extends Model{
 
     // one to many relationship
     public function likes(){
-        return $this->hasMany(Likes::class);
+        return $this->hasMany(Likes::class, '');
     }
 
     // Many to one relationship
