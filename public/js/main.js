@@ -48,4 +48,9 @@ $(document).ready(function() {
     }
     dislike();
 
+    // Buscador
+    $('#search-form').submit(function(e){
+        $(this).attr('action', url+"/users/"+$("#search-form #search-input").val());
+
+    });
 });

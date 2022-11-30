@@ -84,7 +84,7 @@ nav[role=navigation] div:last-child{
     display: none;
 }
 nav[role=navigation] div:first-child span{
-    margin-right: 10px;
+    color: black;
 }
 .users-comments{
     margin-top: 20px;
@@ -111,4 +111,40 @@ nav[role=navigation] div:first-child span{
 .likes-counter{
     color: gray;
     margin-right: 10px;
+}
+.user-data{
+    margin-bottom: 40px;
+    height: 200px;
+}
+.user-data .container-avatar{
+    float: left;
+    overflow: hidden;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+.user-data .container-avatar img{
+    width: 100%;
+    height: 100%;
+}
+.user-data .user-data-info{
+    padding-top: 30px;
+    float: left;
+    padding-left: 30px;
+}
+.actions{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.actions a{
+    color: white;
+}
+.update-post-img{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 200px;
+}
+.btn-search{
+    margin-left: 0px;
+    padding-left: 0px;
 }

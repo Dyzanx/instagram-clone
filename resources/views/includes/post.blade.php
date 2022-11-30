@@ -1,15 +1,19 @@
 <div class="card pub-image">
     <div class="card-header">
         @if($post->user->image)
-        <div class="container-avatar">
-            <img class="avatar post-avatar" src="{{ route('user.avatar', ['filename'=>$post->user->image]) }}"
-                alt="{{Auth::user()->nickname}} avatar">
-        </div>
+        <a href="{{ route('user.profile', ['id' => $post->user->id]) }}">
+            <div class="container-avatar">
+                <img class="avatar post-avatar" src="{{ route('user.avatar', ['filename'=>$post->user->image]) }}"
+                    alt="{{$post->user->nickname}} avatar">
+            </div>
+        </a>
         @endif
-        <div class="data-user">
-            {{ $post->user->name.'  '.$post->user->surname }}
-            <span class="nickname">{{ ' | @'.$post->user->nickname }}</span>
-        </div>
+        <a href="{{ route('user.profile', ['id' => $post->user->id]) }}">
+            <div class="data-user">
+                {{ $post->user->name.'  '.$post->user->surname }}
+                <span class="nickname">{{ ' | @'.$post->user->nickname }}</span>
+            </div>
+        </a>
     </div>
 
     <div class="card-body">
@@ -44,6 +48,7 @@
         </div>
         <div class="description">
             <span class="nickname">{{ '@'.$post->user->nickname }}</span>
+            <span class="nickname">{{ ' | '.\FormatTime::LongTimeFilter($post->created_at) }}</span>
             <p>{{ $post->description }}</p>
         </div>
     </div>

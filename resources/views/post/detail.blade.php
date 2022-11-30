@@ -50,6 +50,40 @@
                             <i class="fa-regular fa-comment-dots"></i><span
                                 class="likes-counter">({{count($post->comments)}})</span>
                         </a>
+
+                        @if(Auth::user() && $post->user_id == Auth::user()->id)
+                        <div class="actions">
+                            <a href="{{ route('post.edit', ['id' => $post->id]) }}"
+                                class="btn btn-sm btn-info">Update</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="btn btn-sm btn-danger">Delete</a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delte confirmation</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete the post? If you do, you will not be able to
+                                            recover the deleted information.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <a href="{{ route('post.delete', ['id' => $post->id]) }}"
+                                                class="btn btn-danger">Delete permanently</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
                     </div>
                     <div class="description">
                         <span class="nickname">{{ '@'.$post->user->nickname }}</span>
@@ -79,7 +113,7 @@
                                 @enderror
                             </p>
 
-                            <input type="submit" class="btn btn-success" value="Envíar comentario">
+                            <input type="submit" class="btn btn-success" value="Send comment">
                         </form>
 
                         <h5 class="comments-title">Comments list</h5>
@@ -95,7 +129,7 @@
                                 @if($comment->user_id === Auth::user()->id || $post->user_id === Auth::user()->id)
                                 <span class="config-comments">
                                     <a href="{{ route('comment.delete', ['id' => $comment->id]) }}"
-                                        class="badge rounded-pill text-bg-danger">Delete</a>
+                                        class="btn btn-sm btn-danger">Delete</a>
                                 </span>
                                 @endif
                             </div>

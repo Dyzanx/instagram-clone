@@ -8,20 +8,25 @@
             @include('includes.message')
 
             <div class="card">
-                <div class="card-header">{{ __('Create new post') }}</div>
+                <div class="card-header">{{ __('Edit post') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('post.save') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('post.update') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <input type="hidden" name="post_id" value="{{ $post->id }}">
 
                         <div class="row mb-3">
                             <label for="image"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Select picture') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror"
-                                    name="image" required>
 
+                            <div class="col-md-6">
+                                <img src="{{ route('post.file', ['filename' => $post->image_path]) }}"
+                                    alt="{{ $post->user->nickname }} post" class="update-post-img">
+
+                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror"
+                                    name="image">
                                 @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -37,7 +42,7 @@
                             <div class="col-md-6">
                                 <textarea class="form-control @error('description') is-invalid @enderror"
                                     name="description" id="description" cols="10" rows="4" autofocus
-                                    required></textarea>
+                                    required>{{ $post->description }}</textarea>
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -50,7 +55,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Publish post') }}
+                                    {{ __('Update post') }}
                                 </button>
                             </div>
                         </div>

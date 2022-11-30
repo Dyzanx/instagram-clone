@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
 
 use function Ramsey\Uuid\v1;
 
@@ -55,5 +56,28 @@ class UserController extends Controller{
     public function getImage($filename){
         $file = Storage::disk('users')->get($filename);
         return new Response($file, 200);
+    }
+
+    public function profile($id){
+        $user = User::find($id);
+        
+        return view('user.profile', [
+        'user' => $user
+        ]);
+    }
+
+    public function users($search = null){
+        if(!empty($search)){
+            $users = User::where('nickname', 'LIKE', "%$search%")
+                            ->orWhere('name', 'LIKE', "%$search%")
+                            ->orWhere('surname', 'LIKE', "%$search%")
+                            ->orderBy('id', 'desc')->paginate(7);
+        }else{
+            $users = User::orderBy('id', 'desc')->paginate(7);
+        }
+
+        return view('user.index', [
+            'users' => $users
+        ]);
     }
 }

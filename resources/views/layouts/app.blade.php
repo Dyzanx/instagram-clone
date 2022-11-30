@@ -64,6 +64,9 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('user.index') }}">People</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('like.index') }}">Favorites</a>
                         </li>
                         <li class="nav-item">
@@ -82,7 +85,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{ route('user.profile', ['id' => Auth::user()->id]) }}">
                                     {{ __('My profile') }}
                                 </a>
 
